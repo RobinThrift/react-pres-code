@@ -1,9 +1,13 @@
 
-var React = require('react'),
-    App = require('./components/app.react.jsx'),
-    Dispatcher = require('./dispatcher/dispatcher');
+var React = require('react');
+
+class InputTest extends React.Component {
+    render() {
+        return (<input type="text" value="Hello" />);
+    }
+}
 
 React.render(
-    <App dispatcher={Dispatcher} />,
+    <InputTest />,
     document.getElementById('react-render')
 );
