@@ -10,6 +10,10 @@ mkdir build/styles
 cp ./src/index.html ./build/index.html
 echo "copied index.html";
 
+# Images
+cp -R ./src/img ./build/img
+echo "copied images";
+
 # LESS
 ./node_modules/.bin/lessc src/styles/main.less build/styles/main.css
 echo "built styles";

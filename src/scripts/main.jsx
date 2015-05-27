@@ -1,21 +1,16 @@
+// src/scripts/main.jsx 
 
-var React = require('react');
+import React from 'react';
+import ShoppingCart from './components/shopping-cart.jsx';
+import Store from './store';
 
-class InputTest extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {val: 'Hello'};
-    }
-    render() {                                                         
-        return (<input type="text" value={this.state.val} 
-                onChange={this._handleChange.bind(this)} />);              
-    }                                                                  
-    _handleChange(event) {                                                  
-        this.setState({val: event.target.value});                   
-    }                                                                  
+let store = new Store();
+
+function _cartChange(products) {
+    store.set('cart', products);
 }
 
 React.render(
-    <InputTest />,
+    <ShoppingCart products={store.get('cart')} cartChange={_cartChange} />,
     document.getElementById('react-render')
 );
