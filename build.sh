@@ -15,6 +15,6 @@ echo "copied index.html";
 echo "built styles";
 
 # Browserify
-./node_modules/.bin/browserify src/scripts/main.jsx -t [ reactify --es6 ] -o build/scripts/main.js --debug
+./node_modules/.bin/browserify src/scripts/main.jsx -t [ babelify ] -o build/scripts/main.js --debug
 echo "built scripts";
 
